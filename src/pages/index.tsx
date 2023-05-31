@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Eduardo's portfolio</title>
+        <title>Eduardo&apos;s portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -42,7 +42,7 @@ export default function Home() {
             <AiFillGithub />
           </div>
           <div className="relative mx-auto bg-gradient-to-b  from-orange-200 to-orange-600 rounded-full w-80 h-80">
-            <Image src={deved} fill />
+            <Image src={deved} fill alt="eduardo picture" />
           </div>
         </section>
       </main>
