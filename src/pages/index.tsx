@@ -2,7 +2,7 @@ import Head from "next/head";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Image from "next/image";
-import deved from "../../public/dev-ed-wave.png";
+import deved from "../../public/ed.jpeg";
 
 export default function Home() {
   return (
@@ -31,6 +31,14 @@ export default function Home() {
             </ul>
           </nav>
           <div className="text-center p-10">
+            <div className="relative mx-auto rounded-full w-40 h-40">
+              <Image
+                className="rounded-full"
+                src={deved}
+                fill
+                alt="eduardo picture"
+              />
+            </div>
             <h2 className="text-5xl py-2 text-teal-500">Eduardo Souza</h2>
             <h3 className="text-2xl py-2">Fullstack software engineer</h3>
             <p className="text-md py-5 leading-8 text-gray-800">
@@ -40,9 +48,6 @@ export default function Home() {
           <div className="text-5xl flex justify-center gap-16">
             <AiFillLinkedin />
             <AiFillGithub />
-          </div>
-          <div className="relative mx-auto bg-gradient-to-b  from-orange-200 to-orange-600 rounded-full w-80 h-80">
-            <Image src={deved} fill alt="eduardo picture" />
           </div>
         </section>
       </main>
