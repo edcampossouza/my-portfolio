@@ -46,8 +46,12 @@ export default function Home() {
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-16">
-            <AiFillLinkedin />
-            <AiFillGithub />
+            <a href="https://github.com/edcampossouza">
+              <AiFillGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/eduardo-campos-souza/">
+              <AiFillLinkedin />
+            </a>
           </div>
         </section>
       </main>
