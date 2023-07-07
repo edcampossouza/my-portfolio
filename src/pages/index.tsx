@@ -63,7 +63,7 @@ export default function Home() {
             </p>
             <p className="text-md py-5 leading-8 text-gray-800">
               I offer a broad selection of services, including design and
-              implementation of web api's, database design, and development of
+              implementation of web api&apos;s, database design, and development of
               single page applications
             </p>
           </div>
