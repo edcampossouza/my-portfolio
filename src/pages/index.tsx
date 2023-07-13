@@ -27,7 +27,7 @@ export default function Home() {
       <Head>
         <title>Eduardo&apos;s portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Visit my portfolio website and checkout my skills and coolest projects!"/>
+        <meta name="description" content="Visit my portfolio website and check out my skills and coolest projects!"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-white px-10 dark:bg-gray-900 dark:text-gray-100">
