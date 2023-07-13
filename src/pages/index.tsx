@@ -4,21 +4,27 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Image from "next/image";
 import deved from "../../public/ed.jpeg";
 
+import { useState } from "react";
+
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(true);
   return (
-    <>
+    <div className={darkMode ? "dark" : ""}>
       <Head>
         <title>Eduardo&apos;s portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-white px-10">
+      <main className="bg-white px-10 dark:bg-gray-900 dark:text-gray-100">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
             <h1 className="text-xl font-burtons">edcampossouza</h1>
             <ul className="flex items-center">
               <li>
-                <BsMoonStarsFill className="cursor-pointer text-xl" />
+                <BsMoonStarsFill
+                  onClick={() => setDarkMode(!darkMode)}
+                  className="cursor-pointer text-xl"
+                />
               </li>
               <li>
                 <a
@@ -41,7 +47,7 @@ export default function Home() {
             </div>
             <h2 className="text-5xl py-2 text-teal-500">Eduardo Souza</h2>
             <h3 className="text-2xl py-2">Fullstack software engineer</h3>
-            <p className="text-md py-5 leading-8 text-gray-800">
+            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200">
               ~ your to go guy for all things web dev ~
             </p>
           </div>
@@ -55,6 +61,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </>
+    </div>
   );
 }
