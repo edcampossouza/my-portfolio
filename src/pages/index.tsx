@@ -63,8 +63,8 @@ export default function Home() {
             </p>
             <p className="text-md py-5 leading-8 text-gray-800">
               I offer a broad selection of services, including design and
-              implementation of web api&apos;s, database design, and development of
-              single page applications
+              implementation of web api&apos;s, database design, and development
+              of single page applications
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-16">
@@ -79,7 +79,7 @@ export default function Home() {
             </a>
           </div>
           <div>
-            <SkillTable className="mx-auto text-gray-800">
+            <SkillTable className="mx-auto text-gray-800 table-auto">
               <SkillRow
                 icons={[
                   { img: mysql, txt: "MySql" },
@@ -103,7 +103,7 @@ export default function Home() {
                   { img: nest, txt: "Nest.js" },
                   { img: spring, txt: "Spring Boot" },
                 ]}
-                text="Nest.js, Next.js, Spring Boot"
+                text="Backend frameworks Nest.js, Next.js, Spring Boot"
               />
               <SkillRow
                 icons={[
@@ -111,7 +111,7 @@ export default function Home() {
                   { img: apache, txt: "Apache" },
                   { img: docker, txt: "Docker" },
                 ]}
-                text="Infrastructure"
+                text="Infrastructure and DevOps"
               />
             </SkillTable>
           </div>
@@ -124,12 +124,21 @@ export default function Home() {
 function SkillRow(props: { icons: { img: any; txt: string }[]; text: string }) {
   return (
     <tr>
-      <td className="flex justify-between space-x-1">
-        {props.icons.map((icon) => (
-          <Image key={icon.img} width={50} height={50} src={icon.img} alt={icon.txt} />
-        ))}
+      <td>
+        <div className="flex justify-between space-x-1 mr-2">
+          {props.icons.map((icon) => (
+            <div>
+              <Image
+                key={icon.txt}
+                width={50}
+                src={icon.img}
+                alt={icon.txt}
+              />
+            </div>
+          ))}
+        </div>
       </td>
-      <td>{props.text}</td>
+      <td className="overflow-x-clip">{props.text}</td>
     </tr>
   );
 }
