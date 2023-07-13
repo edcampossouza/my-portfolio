@@ -18,21 +18,27 @@ import nginx from "../../public/nginx-icon.svg";
 import apache from "../../public/apache-icon.svg";
 import { ReactNode } from "react";
 
+import { useState } from "react";
+
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(true);
   return (
-    <>
+    <div className={darkMode ? "dark" : ""}>
       <Head>
         <title>Eduardo&apos;s portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-white px-10">
+      <main className="bg-white px-10 dark:bg-gray-900 dark:text-gray-100">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
             <h1 className="text-xl font-burtons">edcampossouza</h1>
             <ul className="flex items-center">
               <li>
-                <BsMoonStarsFill className="cursor-pointer text-xl" />
+                <BsMoonStarsFill
+                  onClick={() => setDarkMode(!darkMode)}
+                  className="cursor-pointer text-xl"
+                />
               </li>
               <li>
                 <a
@@ -58,10 +64,10 @@ export default function Home() {
               edcampossouza@gmail.com
             </h2>
             <h3 className="text-2xl py-2">Full Stack Web Developer</h3>
-            <p className="text-md py-5 leading-8 text-gray-800">
+            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200">
               ~ your to go guy for all things web dev ~
             </p>
-            <p className="text-md py-5 leading-8 text-gray-800">
+            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200">
               I offer a broad selection of services, including design and
               implementation of web api&apos;s, database design, and development
               of single page applications
@@ -78,8 +84,8 @@ export default function Home() {
               <AiOutlineMail />
             </a>
           </div>
-          <div>
-            <SkillTable className="mx-auto text-gray-800 table-auto">
+          <div className="dark:rounded-lg p-3 dark:bg-gray-500 w-fit mx-auto ">
+            <SkillTable className="mx-auto text-gray-800 dark:text-gray-200 table-auto ">
               <SkillRow
                 icons={[
                   { img: mysql, txt: "MySql" },
@@ -103,7 +109,7 @@ export default function Home() {
                   { img: nest, txt: "Nest.js" },
                   { img: spring, txt: "Spring Boot" },
                 ]}
-                text="Backend frameworks Nest.js, Next.js, Spring Boot"
+                text="Backend frameworks Express.js, Nest.js, Spring Boot"
               />
               <SkillRow
                 icons={[
@@ -117,7 +123,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </>
+    </div>
   );
 }
 
@@ -125,15 +131,10 @@ function SkillRow(props: { icons: { img: any; txt: string }[]; text: string }) {
   return (
     <tr>
       <td>
-        <div className="flex justify-between space-x-1 mr-2">
+        <div className="flex justify-between space-x-1 mr-2 ">
           {props.icons.map((icon) => (
             <div>
-              <Image
-                key={icon.txt}
-                width={50}
-                src={icon.img}
-                alt={icon.txt}
-              />
+              <Image key={icon.txt} width={50} src={icon.img} alt={icon.txt} />
             </div>
           ))}
         </div>
