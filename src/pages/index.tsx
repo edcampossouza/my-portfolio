@@ -133,8 +133,8 @@ function SkillRow(props: { icons: { img: any; txt: string }[]; text: string }) {
       <td>
         <div className="flex justify-between space-x-1 mr-2 ">
           {props.icons.map((icon) => (
-            <div>
-              <Image key={icon.txt} width={50} src={icon.img} alt={icon.txt} />
+            <div key={icon.txt}>
+              <Image width={50} src={icon.img} alt={icon.txt} />
             </div>
           ))}
         </div>
